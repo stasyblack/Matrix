@@ -3,32 +3,36 @@
 
 #include <iostream>
 using namespace std;
+
+const int n = 10;
+const int m = 10;
+
+void init_array(int(*mas)[m], int n1, int m1, int c)
+{
+	for (int i = 0; i < n1; i++)
+	{
+		for (int j = 0; j < n1; j++)
+			mas[i][j] = c;
+	}
+}
+void print_array(int(*mas)[m], int n1, int m1)
+{
+	for (int i = 0; i < n1; i++)
+	{
+		for (int j = 0; j < n1; j++)
+			cout << mas[i][j] << " ";
+		cout << "\n";
+	}
+}
 int main()
 {
-	const int n = 10;
-	int mas[n];
-	int i;
-	for (i = 0; i < n; i++)
-	{
-		if (i % 2 == 0)
-		{
-			if (i == 4)
-				mas[i] = 3;
-			else
-				mas[i] = 0;
-		}
-		else
-			if (i == 5)
-				mas[i] = 2;
-			else
-				mas[i] = 1;
-	}
-	i = 0;
-	while (i < n)
-	{
-		cout << mas[i] << " ";
-		i++;
-	}
+
+	int my_array[n][m];
+	//int i, j;
+	init_array(my_array, n, m, 0);
+	print_array(my_array, n, m);
+	cout << "\n";
+	init_array(my_array, n, m, 1);
+	print_array(my_array, n, m);
 
 }
-
