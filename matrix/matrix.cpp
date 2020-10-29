@@ -11,9 +11,17 @@ int main()
 	for (i = 0; i < n; i++)
 	{
 		if (i % 2 == 0)
-			mas[i] = 0;
+		{
+			if (i == 4)
+				mas[i] = 3;
+			else
+				mas[i] = 0;
+		}
 		else
-			mas[i] = 1;
+			if (i == 5)
+				mas[i] = 2;
+			else
+				mas[i] = 1;
 	}
 	i = 0;
 	while (i < n)
@@ -23,3 +31,4 @@ int main()
 	}
 
 }
+
